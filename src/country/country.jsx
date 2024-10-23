@@ -1,8 +1,11 @@
 
 import { useState } from 'react';
 import './country.css'
+import CounteryDatelis from '../components/counteryDatelis/CounteryDatelis';
+
+
 const Country = ({country,VisitedCount,flag}) => {
-    console.log(country)
+    // console.log(country)
    const{name , flags, area, population,cca3}=country;
     const [visited ,setVisited]=useState(false)
     const hindleVisited=()=>{
@@ -23,7 +26,14 @@ const Country = ({country,VisitedCount,flag}) => {
            <button onClick={hindleVisited}>{visited ? "Visited":"Going"}</button>
            <br />
            {visited ? 'I have visited the Country':"I want to a visted"}
+           <hr />
+          <CounteryDatelis
+          country={country}
+          VisitedCount={VisitedCount}
+          flag={flag}
+          ></CounteryDatelis>
         </div>
+       
     );
 };
 

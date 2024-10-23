@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Country from "../../country/country";
 import './countries.css'
+
 const Countries = () => {
     const [countries ,setCountries]=useState([])
     const [visited,setVisited]=useState([])
@@ -13,7 +14,7 @@ const Countries = () => {
         .then(data=>setCountries(data))
     },[])
     const hideleVisiedCount=(country)=>{
-        console.log("count the visited country")
+        // console.log("count the visited country")
         const newVisited=[...visited , country]
         setVisited(newVisited)
     }
@@ -43,6 +44,7 @@ const Countries = () => {
                 country={data}></Country>)  
             }
           </div>
+          
         </div>
     );
 };
